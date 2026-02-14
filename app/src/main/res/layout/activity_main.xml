@@ -1,138 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/lbl_titulo"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="22dp"
-        android:text="Control de Productos"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtNombreProducto"
-        app:layout_constraintEnd_toEndOf="@+id/txtNombreProducto"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/txtNombreProducto"
-        android:layout_width="250dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="13dp"
-        android:ems="10"
-        android:hint="Nombre del producto"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtCodigoBarras"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_titulo" />
+        <!-- Título -->
+        <TextView
+            android:id="@+id/lbl_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Control de Productos"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
 
-    <EditText
-        android:id="@+id/txtCodigoBarras"
-        android:layout_width="253dp"
-        android:layout_height="41dp"
-        android:layout_marginBottom="14dp"
-        android:ems="10"
-        android:hint="Codigo de barras"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtPrecioCosto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombreProducto" />
+        <!-- Nombre Producto -->
+        <EditText
+            android:id="@+id/txtNombreProducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del producto"
+            android:inputType="text"
+            android:layout_marginBottom="12dp"/>
 
-    <EditText
-        android:id="@+id/txtPrecioCosto"
-        android:layout_width="258dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="13dp"
-        android:ems="10"
-        android:hint="Precio costo ($)"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtPorcentajeGanancia"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCodigoBarras" />
+        <!-- Código de Barras -->
+        <EditText
+            android:id="@+id/txtCodigoBarras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Código de barras"
+            android:inputType="text"
+            android:layout_marginBottom="12dp"/>
 
-    <EditText
-        android:id="@+id/txtPorcentajeGanancia"
-        android:layout_width="259dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="18dp"
-        android:ems="10"
-        android:hint="Porcentaje de ganancia (%)"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtPrecioVenta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPrecioCosto" />
+        <!-- Precio Costo -->
+        <EditText
+            android:id="@+id/txtPrecioCosto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Precio costo ($)"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="12dp"/>
 
-    <EditText
-        android:id="@+id/txtPrecioVenta"
-        android:layout_width="263dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="23dp"
-        android:ems="10"
-        android:hint="Precio venta ($)"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/chcActivo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPorcentajeGanancia" />
+        <!-- Porcentaje Ganancia -->
+        <EditText
+            android:id="@+id/txtPorcentajeGanancia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Porcentaje de ganancia (%)"
+            android:inputType="number"
+            android:layout_marginBottom="12dp"/>
 
-    <Button
-        android:id="@+id/btnGuardar"
-        android:layout_width="251dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="21dp"
-        android:text="Guardar"
-        app:layout_constraintBottom_toTopOf="@+id/lblProductosRegistrados"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chcActivo" />
+        <!-- Precio Venta -->
+        <EditText
+            android:id="@+id/txtPrecioVenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Precio venta ($)"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="16dp"/>
 
-    <CheckBox
-        android:id="@+id/chcActivo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="20dp"
-        android:text="Producto activo"
-        app:layout_constraintBottom_toTopOf="@+id/btnGuardar"
-        app:layout_constraintStart_toStartOf="@+id/btnGuardar"
-        app:layout_constraintTop_toBottomOf="@+id/txtPrecioVenta" />
+        <!-- CheckBox Activo -->
+        <CheckBox
+            android:id="@+id/chcActivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Producto activo"
+            android:checked="true"
+            android:layout_marginBottom="16dp"/>
 
-    <TextView
-        android:id="@+id/lblProductosRegistrados"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginBottom="18dp"
-        android:text="Productos Registrados"
-        app:layout_constraintBottom_toTopOf="@+id/txtResultado"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGuardar" />
+        <!-- Botón Guardar -->
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:layout_marginBottom="24dp"/>
 
-    <EditText
-        android:id="@+id/txtResultado"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="68dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblProductosRegistrados" />
+        <!-- Label Resultado -->
+        <TextView
+            android:id="@+id/lblProductosRegistrados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Productos Registrados"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Resultado -->
+        <EditText
+            android:id="@+id/txtResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="El resultado aparecerá aquí..."
+            android:inputType="textMultiLine"
+            android:minLines="6"
+            android:maxLines="12"
+            android:gravity="top|start"
+            android:scrollbars="vertical"
+            android:focusable="false"
+            android:cursorVisible="false"
+            android:fontFamily="monospace"
+            android:padding="8dp"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
+</ScrollView>
