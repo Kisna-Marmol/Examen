@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/lbl_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Control de Productos"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Nombre Producto -->
+        <EditText
+            android:id="@+id/txtNombreProducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del producto"
+            android:inputType="text"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Código de Barras -->
+        <EditText
+            android:id="@+id/txtCodigoBarras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Código de barras"
+            android:inputType="text"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Precio Costo -->
+        <EditText
+            android:id="@+id/txtPrecioCosto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Precio costo ($)"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Porcentaje Ganancia -->
+        <EditText
+            android:id="@+id/txtPorcentajeGanancia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Porcentaje de ganancia (%)"
+            android:inputType="number"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Precio Venta -->
+        <EditText
+            android:id="@+id/txtPrecioVenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Precio venta ($)"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- CheckBox Activo -->
+        <CheckBox
+            android:id="@+id/chcActivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Producto activo"
+            android:checked="true"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Botón Guardar -->
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Label Resultado -->
+        <TextView
+            android:id="@+id/lblProductosRegistrados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Productos Registrados"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Resultado -->
+        <EditText
+            android:id="@+id/txtResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="El resultado aparecerá aquí..."
+            android:inputType="textMultiLine"
+            android:minLines="6"
+            android:maxLines="12"
+            android:gravity="top|start"
+            android:scrollbars="vertical"
+            android:focusable="false"
+            android:cursorVisible="false"
+            android:fontFamily="monospace"
+            android:padding="8dp"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
+</ScrollView>
